@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Pulling Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 IP Pulling Tool</h1>
+            <p>Lookup IP addresses and retrieve geolocation & metadata</p>
+        </header>
+
+        <div class="card">
+            <h2>Lookup IP Address</h2>
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="ipInput" 
+                    placeholder="Enter IP address (e.g., 8.8.8.8 or 2606:4700::1111)" 
+                    autocomplete="off"
+                >
+                <button id="lookupBtn" class="btn btn-primary">Lookup</button>
+                <button id="myIpBtn" class="btn btn-secondary">Get My IP</button>
+            </div>
+            <div id="error" class="error"></div>
+        </div>
+
+        <div class="card">
+            <h2>Batch Lookup</h2>
+            <div class="batch-section">
+                <textarea 
+                    id="batchInput" 
+                    placeholder="Enter multiple IPs (one per line)&#10;8.8.8.8&#10;1.1.1.1&#10;208.67.222.222"
+                    rows="6"
+                ></textarea>
+                <button id="batchBtn" class="btn btn-primary">Lookup Batch</button>
+            </div>
+        </div>
+
+        <div class="card results-card" id="resultsCard" style="display: none;">
+            <h2>Results</h2>
+            <div id="results"></div>
+            <button id="copyBtn" class="btn btn-secondary">Copy JSON</button>
+            <button id="downloadBtn" class="btn btn-secondary">Download CSV</button>
+        </div>
+
+        <footer>
+            <p>Data provided by <a href="https://ip-api.com" target="_blank">IP-API</a> | Made with ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
